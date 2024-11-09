@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  strapi:
+    build: .
+    container_name: strapi
+    ports:
+      - "1337:1337"
+    environment:
+      # Конфигурация подключения к PostgreSQL
+      DATABASE_CLIENT: postgres
+      DATABASE_HOST: 79.137.133.182
+      DATABASE_PORT: 5432
+      DATABASE_NAME: default_db
+      DATABASE_USERNAME: gen_user
+      DATABASE_PASSWORD: ri-avo5NTa
+      # Настройки по умолчанию Strapi
+      APP_KEYS: +JJAAuLgShryjQ4rVa3zmA==,NrZxcj+TUdz5BKBYWrG2aw==,hzRhp41OkWrx05TLlFp9mg==,0bnOWq9Umd47fhmR8XERIA==
+      API_TOKEN_SALT: vMFqOr65hhAmvlTXU4pN6Q==
+      ADMIN_JWT_SECRET: 9KUcrOOTH6sLVvZeYB/ebA==
+      JWT_SECRET: x7yA+bqKzbifXovD0CtL5w==
+    volumes:
+      - .:/usr/src/app
